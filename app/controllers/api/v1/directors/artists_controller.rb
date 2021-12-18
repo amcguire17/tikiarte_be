@@ -22,6 +22,9 @@ class Api::V1::Directors::ArtistsController < ApplicationController
 
   def delete
     artist = Artist.find(params[:id])
+    artist.images.each do |image|
+      image.delete
+    end
     artist.delete
   end
 
