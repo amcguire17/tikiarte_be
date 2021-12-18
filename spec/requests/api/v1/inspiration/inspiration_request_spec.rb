@@ -11,7 +11,7 @@ RSpec.describe 'inspiration' do
 
       expect(image).to have_key(:data)
       expect(image[:data]).to have_key(:url)
-      expect(image[:data][:url]).to eq("https://i.picsum.photos/id/1006/500/600.jpg?hmac=8vTJ9Ijrp--dS-_moMUUoqgWF0jv5X8TnGuzuU6sOnw")
+      expect(image[:data][:url]).to eq("https://i.picsum.photos/id/327/500/600.jpg?hmac=sNT8Km4rKl_Rf9SzhhZ2DoWjsnF0F58yM9rQvEfhJhc")
     end
   end
 end
