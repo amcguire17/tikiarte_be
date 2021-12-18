@@ -147,5 +147,18 @@ describe 'directors artists' do
       expect(response).to be_not_found
       expect(response.status).to eq(404)
     end
+
+    it 'deletes an artist with images' do
+      artist = create(:artist, :with_images, director_id: @director.id)
+
+      delete "/api/v1/directors/#{@director.id}/artists/#{artist.id}"
+
+      expect(response).to be_successful
+
+      get "/api/v1/directors/#{@director.id}/artists/#{artist.id}"
+
+      expect(response).to be_not_found
+      expect(response.status).to eq(404)
+    end
   end
 end
